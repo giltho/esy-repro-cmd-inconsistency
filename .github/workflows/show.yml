@@ -25,13 +25,15 @@ jobs:
         esy import-dependencies _export
         rm -rf _export
     - run: 'esy'
-    - run: |
+    - name: Prepare Cache
+      run: |
         esy cleanup .
         esy export-dependencies
       if: steps.restore-cache.outputs.cache-hit != 'true'
     - run: 'esy x repro file.txt'
       working-directory: 'sub/folder'
     - run: 'sed -i "" "s/AAAA/BBBB/g" lib/lib.ml'
+    - run: 'cat lib/lib.ml'
     - run: 'esy'
       working-directory: 'sub/folder'
     - run: 'esy x repro file.txt'
