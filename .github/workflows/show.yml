@@ -18,7 +18,7 @@ jobs:
         path: _export
         key: ${{ runner.os }}-esy-${{ hashFiles('esy.lock/index.json') }}
         restore-keys: |
-          ${{ runner-os }}-esy
+          ${{ runner.os }}-esy
     - run: 'esy install'
     - name: Import Cache
       run: |
