@@ -1,0 +1,8 @@
+lib: [
+  "_build/install/default/lib/repro/META"
+  "_build/install/default/lib/repro/dune-package"
+  "_build/install/default/lib/repro/opam"
+]
+bin: [
+  "_build/install/default/bin/repro"
+]

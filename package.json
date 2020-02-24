@@ -1,0 +1,20 @@
+{
+  "name": "repro-inconsistency",
+  "private": true,
+  "esy": {
+    "build": [
+      "dune build @install --promote-install-files"
+    ],
+    "install": [
+      "esy-installer lib.install", "esy-installer repro.install"
+    ],
+    "buildsInSource": "_build"
+  },
+  "dependencies": {
+    "@opam/dune": "*",
+    "ocaml": "^4.8.1000"
+  },
+  "devDependencies": {
+    "ocaml": "4.8.1000"
+  }
+}
